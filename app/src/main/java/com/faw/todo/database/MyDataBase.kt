@@ -4,12 +4,14 @@ import android.content.Context
 import androidx.room.*
 import androidx.sqlite.db.SupportSQLiteOpenHelper
 import com.faw.todo.database.Dao.TodoDao
+import com.faw.todo.database.model.Converters
 import com.faw.todo.database.model.Todo
 
 @Database(entities = [Todo::class],
     version=1,
     exportSchema = false
 )
+@TypeConverters(Converters::class)
 abstract class MyDataBase: RoomDatabase() {
 
     abstract fun getTodoDao() : TodoDao

@@ -12,6 +12,6 @@ data class Todo (
     @ColumnInfo
     val todoName:String ?= null,
     val todoDescription:String ?= null,
-    val date:Long?= null,
+    val date:Date?= null,
     val isDone: Boolean ?= null
 )
