@@ -7,11 +7,10 @@ import java.util.*
 
 @Entity(tableName = "TodoTable")
 data class Todo (
-    @PrimaryKey(autoGenerate = true)
-    val id:Int,
+    @PrimaryKey(autoGenerate = true) val id:Int ?= null,
     @ColumnInfo
-    val todoName:String ?= null,
-    val todoDescription:String ?= null,
-    val date:Date?= null,
-    val isDone: Boolean ?= null
-)
+    var todoName:String ?= null,
+    var todoDescription:String ?= null,
+    var date:Date?= null,
+    var isDone: Boolean ?= null
+):java.io.Serializable
